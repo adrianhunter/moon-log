@@ -1,0 +1,35 @@
+{
+  "name": "moon-log",
+  "version": "1.0.0",
+  "description": "log helper",
+  "main": "moon-log.js",
+  "scripts": {
+    "watch:src": "watch-run --initial -p 'src/*.ls' 'npm run build'",
+    "watch:test": "watch-run --initial -p 'test/*.ls,src/*.ls' 'npm run build:test'",
+    "test": "npm run build && npm run build:test | testling -x 'open -a \"Google Chrome Canary\"'",
+    "example": "npm run build && npm run build:test && lite-server",
+    "build": "lsc --output lib -c src/moon-log.ls",
+    "build:test": "npm run build && browserify -t browserify-livescript test/test.ls > test/test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adrianhunter/moon-log.git"
+  },
+  "keywords": [
+    "console.log",
+    "logging",
+    "logs",
+    "debug"
+  ],
+  "author": "adrianhunter",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adrianhunter/moon-log/issues"
+  },
+  "homepage": "https://github.com/adrianhunter/moon-log#readme",
+  "devDependencies": {
+    "browserify-livescript": "^0.2.3",
+    "level-browserify": "^1.1.0",
+    "tape": "^4.5.1"
+  }
+}

@@ -1,2 +1,1 @@
-# moon-log
-log helper
+[WIP]
